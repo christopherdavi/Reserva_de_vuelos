@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Reservar de asientos</title>
+        <h4>TRABAJO REALIZADO POR MORALES Y FRANCO</h4>
+    </head>
+    <body>
+        <script>
+         var num=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+         var asiento;
+         
+         function reservar(){
+            n=prompt("Ingrese numero de asiento que desea reservar");
+         if (n>=0 && n<=19){
+
+            if (num[n]==1){
+        alert ("asiento no libre");
+         }   
+         else {
+             num[n]=1; 
+             alert("El asiento "+ n+"  reservado");
+         }
+         }
+        else {
+            alert("Ese numero de asiento no existe");
+        }
+        }
+        function cancelar (){
+            var m=prompt("Ingrese el asiento reservado a cancelar");
+            if (num[m]==0){
+                if (m>=0 && m<=19){
+            
+        alert ("Este asiento no esta reservado");
+         }
+         else {
+             num[m]=0;
+             alert("Asiento numero "+ m +" cancelado");
+         }
+         }  
+         else {
+            alert("Ese numero de asiento no existe");
+        } 
+        }
+        function consultar (){
+asiento = num.length;
+for (i= 0; i <num; i++) {
+ if (num[i]==1){
+alert("asiento disponible son"+i );
+ }
+  document.write(asiento);
+}
+  
+alert("Los asientos reservados son tales"+ i);
+        }    
+            </script>
+              <input type="button" name="boton1" id="b1" value="seleccionar asiento" onclick="reservar()"></td>
+              <td> <input type="button" name="boton2" id="b2" value="Anular Reservacion" onclick="cancelar()"></td>
+                <td><input type="button" name="boton3" id="b3" value="Averiguar asientos reservados" onclick="consultar()"></td>
+      
+    </body>
+</html>
